@@ -10,14 +10,18 @@
 > Frontend
 
 - `Next.js` used as a Frontend Framework
+- `TypeScript`
 - `Vanilla CSS` used for styling
 - `Font awesome` used for icons
+- `Cypress` for end to end testing
+- `Axios`: In React version, I am planning to use Axios instead of fetch
 
 > Backend
 
 - `Node.js`
 - `Express.js`
 - `MongoDB (cloud)`
+
 
 ### Responsive Design
 
