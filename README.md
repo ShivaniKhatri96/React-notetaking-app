@@ -9,12 +9,13 @@
 
 > Frontend
 
-- `Next.js` used as a Frontend Framework
+- `React` used as a Frontend Framework
+- `React router` used for routing
 - `TypeScript`
 - `Vanilla CSS` used for styling
 - `Font awesome` used for icons
 - `Cypress` for end to end testing
-- `Axios`: In React version, I am planning to use Axios instead of fetch
+- `Axios` in React version, I am planning to use Axios instead of fetch
 
 > Backend
 
