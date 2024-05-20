@@ -48,11 +48,13 @@
 #### Backend
 
 > `cd backend`
+
 > `npm run dev` or `npm run start`
 
 #### Frontend
 
 > `cd frontend`
+
 > `npm run dev`
 
 #### Log in via these Accounts
