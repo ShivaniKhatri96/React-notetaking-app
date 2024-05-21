@@ -1,13 +1,13 @@
-# Noteworthy: A Notetaking-app created with React (Next.js)
+# Noteworthy: A Notetaking-app created with React
 
 > Ready to embark on a note-taking journey? Create `noteworthy notes` with `Noteworthy`. Note is shared among all the users. However, only the note's creator can edit and delete it.
 
 > I am recreating this app in React by using the same backend
 
 
-### Tools that will be used
+### Tools used
 
-> Frontend
+> Frontend: Tools that will be used in the frontend
 
 - `React` used as a Frontend Framework
 - `React router` used for routing
@@ -15,7 +15,7 @@
 - `Redux` will be used for managing global states
 - `Material UI (MUI5)` will be used as CSS framework
 - `Axios` I am planning to use Axios instead of fetch in React version
-- `Font awesome` used for icons
+- `Material Icons` will be used for icons instead of font-awesome in React version
 - `Cypress` for end to end testing
 
 
