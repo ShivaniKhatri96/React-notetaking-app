@@ -13,7 +13,7 @@ const User = require("./models/user");
 const Note = require("./models/note");
 
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 // hardcoded secret key used for this project
 const SECRET_KEY = "notetaking_app_key";
 

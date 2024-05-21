@@ -32,7 +32,6 @@ body {
   min-height: 100vh;
   color: var(--text-color);
   background: var(--background-color);
-  overflow: hidden;
   font-family:
     Inter,
     -apple-system,
