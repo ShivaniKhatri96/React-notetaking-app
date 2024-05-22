@@ -8,26 +8,10 @@
     height: calc(100vh - var(--navbar-height));
 }
 
-.logo-icon {
-    width: 15rem;
-}
-
-.notes-image {
-    width: 15rem;
-}
-
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .welcome-box {
         display: flex;
         flex-direction: row;
-    }
-
-    .notes-image {
-        width: 20rem;
-    }
-
-    .logo-icon {
-        width: 20rem;
     }
 }
