@@ -1,8 +1,4 @@
-.custom-app-bar {
-  background-color: var(--white) !important;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
-  color: var(--text-color) !important;
-}
+/* navbar logo */
 .logo {
   width: 160px;
   height: 50px;
@@ -12,7 +8,7 @@
   cursor: pointer;
   animation: heartbeat 1.5s ease-in-out both;
 }
-
+/* animation for logo */
 @keyframes heartbeat {
   from {
     -webkit-transform: scale(1);

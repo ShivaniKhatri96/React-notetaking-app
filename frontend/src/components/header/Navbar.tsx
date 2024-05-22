@@ -14,7 +14,14 @@ const navItems = [
 const Navbar = () => {
   return (
     <>
-      <AppBar position="sticky" className="custom-app-bar">
+      <AppBar
+        position="sticky"
+        sx={{
+          backgroundColor: "#ffffff",
+          boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+          color: "#333333",
+        }}
+      >
         <Toolbar
           sx={{
             display: "flex",

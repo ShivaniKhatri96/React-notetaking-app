@@ -1,11 +1,20 @@
-import "./Welcome.css";
 import PostIt from "../assets/notes.png";
 import { Box } from "@mui/material";
 import WelcomeContent from "../components/WelcomeContent";
 
 const Welcome = () => {
   return (
-    <Box component="main" className="welcome-box">
+    <Box
+      component="main"
+      sx={{
+        display: "flex",
+        flexDirection: { xs: "column", lg: "row" },
+        justifyContent: "center",
+        alignItems: "center",
+        flexGrow: "1",
+        gap: "1.5rem",
+      }}
+    >
       <Box
         component="img"
         alt="post-it picture"
