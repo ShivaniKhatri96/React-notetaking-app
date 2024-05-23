@@ -55,6 +55,7 @@ const LoginModal = () => {
             type="username"
             autoComplete="current-username"
             size="small"
+            color="success"
           />
           <TextField
             id="outlined-password-input"
@@ -62,6 +63,7 @@ const LoginModal = () => {
             type="password"
             autoComplete="current-password"
             size="small"
+            color="success"
           />
           <Button variant="contained" color="success">
             Log in

@@ -4,20 +4,27 @@
 
 > I am recreating this app in React by using the same backend
 
+### updates
+
+- Navbar and content for welcome page added and made responsive
+- log in modal is made responsive. It opens and closes based on redux state
+
+### Currently working on
+
+- Log in portion of the log in modal
 
 ### Tools used
 
 > Frontend: Tools that will be used in the frontend
 
 - `React` used as a Frontend Framework
-- `React router` used for routing
 - `TypeScript`
-- `Redux` will be used for managing global states
-- `Material UI (MUI5)` will be used as CSS framework
-- `Axios` I am planning to use Axios instead of fetch in React version
-- `Material Icons` will be used for icons instead of font-awesome in React version
-- `Cypress` for end to end testing
-
+- `Material UI (MUI5)` used as CSS framework
+- `CSS`
+- `React router` used for routing
+- `Redux` used for managing global states
+- `Axios` using Axios instead of fetch in this (React) version
+- `Material Icons` used for icons in this version instead of font-awesome
 
 > Backend
 
@@ -25,11 +32,13 @@
 - `Express.js`
 - `MongoDB (cloud)`
 
+> Testing: it will be also added later
+
+- `Cypress` for end to end testing
 
 ### Responsive Design
 
 - The website will be made responsive
-
 
 ### Functionalities to be added
 
@@ -65,6 +74,7 @@
 > `npm run dev`
 
 #### Log in via these Accounts
+
 You can log in using 3 different accounts to test the project:
 | Username | Password |
 |-----------------|-----------------|
@@ -72,8 +82,6 @@ You can log in using 3 different accounts to test the project:
 | `Ron` | `Ron1` |
 | `Harry` | `Harry1` |
 
-
 ### Final Notes
 
 > Even though the final design is my own, I took a lot of inspiration from [Google keep](https://keep.google.com/), [Dribbble](https://dribbble.com/) and [Facebook Posts](https://www.facebook.com/).
-
