@@ -1,6 +1,13 @@
 import { Box, Button, Typography } from "@mui/material";
 import Logo from "../assets/logo.png";
+import { useAppDispatch } from "../app/hooks";
+import { toggleLoginModal } from "../features/loginModal/login-modal-slice";
 const WelcomeContent = () => {
+  const dispatch = useAppDispatch();
+
+  const clickHandler = () => {
+    dispatch(toggleLoginModal());
+  };
   return (
     <Box
       component="section"
@@ -35,6 +42,7 @@ const WelcomeContent = () => {
           border: "solid 2px #000",
           borderRadius: "8px",
         }}
+        onClick={clickHandler}
       >
         Log in
       </Button>
