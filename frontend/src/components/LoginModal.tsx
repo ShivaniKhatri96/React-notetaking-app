@@ -1,15 +1,8 @@
-import { useTheme } from '@mui/material/styles';
-import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  useMediaQuery,
-} from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { Box, Button, Dialog, TextField, useMediaQuery } from "@mui/material";
 import { toggleLoginModal } from "../features/loginModal/login-modal-slice";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+import LargeLogo from "../assets/largeLogo.png";
 
 const LoginModal = () => {
   const dispatch = useAppDispatch();
@@ -22,29 +15,28 @@ const LoginModal = () => {
   };
 
   return (
-    <Dialog
-      fullScreen={fullScreen}
-      open={isActive}
-      onClose={handleClose}
-      aria-labelledby="responsive-dialog-title"
-    >
-      <DialogTitle id="responsive-dialog-title">
-        {"Use Google's location service?"}
-      </DialogTitle>
-      <DialogContent>
-        <DialogContentText>
-          Let Google help apps determine location. This means sending anonymous
-          location data to Google, even when no apps are running.
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        <Button autoFocus onClick={handleClose}>
-          Disagree
-        </Button>
-        <Button onClick={handleClose} autoFocus>
-          Agree
-        </Button>
-      </DialogActions>
+    <Dialog fullScreen={fullScreen} open={isActive} onClose={handleClose}>
+      <Box
+        component="img"
+        alt="logo"
+        sx={{ width: { xs: "20rem", lg: "25rem" } }}
+        src={LargeLogo}
+      />
+      <Box component="form">
+        <TextField
+          id="outlined-username-input"
+          label="Username"
+          type="username"
+          autoComplete="current-username"
+        />
+        <TextField
+          id="outlined-password-input"
+          label="Password"
+          type="password"
+          autoComplete="current-password"
+        />
+        <Button>Log in</Button>
+      </Box>
     </Dialog>
   );
 };
