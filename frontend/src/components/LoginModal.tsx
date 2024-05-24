@@ -12,12 +12,15 @@ import {
 import { toggleLoginModal } from "../features/loginModal/login-modal-slice";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import LargeLogo from "../assets/largeLogo.png";
+import { useState } from "react";
 
 const LoginModal = () => {
   const dispatch = useAppDispatch();
   const theme = useTheme();
   const isActive = useAppSelector((state) => state.loginModal.isActive);
-  //
+
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   // fullScreen is used for modal when screen is below 1200px. So, for smaller screens
   const fullScreen = useMediaQuery(theme.breakpoints.down("lg"));
 
@@ -25,6 +28,10 @@ const LoginModal = () => {
     dispatch(toggleLoginModal());
   };
 
+  const loginFormSubmit = (e: any) => {
+    e.preventDefault()
+    console.log('submitted')
+  }
   return (
     <Dialog fullScreen={fullScreen} open={isActive} onClose={handleClose}>
       <DialogTitle>
@@ -48,6 +55,7 @@ const LoginModal = () => {
             gap: "1rem",
             marginTop: "0.5rem",
           }}
+          onSubmit={loginFormSubmit}
         >
           <TextField
             id="outlined-username-input"
@@ -56,6 +64,9 @@ const LoginModal = () => {
             autoComplete="current-username"
             size="small"
             color="success"
+            sx={{ outline: "#000" }}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <TextField
             id="outlined-password-input"
@@ -64,8 +75,10 @@ const LoginModal = () => {
             autoComplete="current-password"
             size="small"
             color="success"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <Button variant="contained" color="success">
+          <Button variant="contained" color="success" type="submit">
             Log in
           </Button>
         </Box>
