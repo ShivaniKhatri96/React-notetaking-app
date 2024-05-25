@@ -9,27 +9,48 @@ import {
 } from "react-router-dom";
 import MyNotes from "./pages/MyNotes";
 import Home from "./pages/Home";
-import { useAppSelector } from "./app/hooks";
+import ProtectedRoute from "./components/routes/ProtectedRoute";
+import UnauthenticatedRoute from "./components/routes/UnauthenticatedRoute";
 
 function App() {
-  const token = useAppSelector((state) => state.auth.token);
   return (
     <div className="app">
       <Router>
         <Navbar />
         <Routes>
-          {token === null ? (
-            <>
-              <Route path="/welcome" element={<Welcome />} />
-              <Route path="*" element={<Navigate replace to="/welcome" />} />
-            </>
-          ) : (
-            <>
-              <Route path="/" element={<Home />} />
-              <Route path="/my-notes" element={<MyNotes />} />
-              <Route path="*" element={<Navigate replace to="/" />} />
-            </>
-          )}
+          <Route
+            path="/welcome"
+            element={
+              <UnauthenticatedRoute>
+                <Welcome />
+              </UnauthenticatedRoute>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/my-notes"
+            element={
+              <ProtectedRoute>
+                <MyNotes />
+              </ProtectedRoute>
+            }
+          />
+          {/* this one should be for 404 page. Might need to remove protected route for it later!! */}
+          <Route
+            path="*"
+            element={
+              <ProtectedRoute>
+                <Navigate replace to="/" />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </Router>
     </div>
