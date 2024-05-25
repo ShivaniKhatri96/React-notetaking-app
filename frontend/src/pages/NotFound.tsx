@@ -1,27 +1,12 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import NotFoundImg from "../assets/notFoundImg.png";
 
 const NotFound = () => {
   const navigate = useNavigate();
   return (
-    <Box
-      component="section"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        flexGrow: "1",
-        gap: "1rem",
-      }}
-    >
-      <Box
-        component="img"
-        alt="404 image"
-        sx={{ width: "12rem" }}
-        src={NotFoundImg}
-      />
+    <div className="image-wrapper">
+      <img alt="404 image" width={180} src={NotFoundImg} />
       <Typography sx={{ textAlign: "center" }}>
         Oops! The page you are looking for cannot be found.
       </Typography>
@@ -33,7 +18,7 @@ const NotFound = () => {
       >
         Go back to home
       </Button>
-    </Box>
+    </div>
   );
 };
 

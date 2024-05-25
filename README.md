@@ -4,9 +4,10 @@
 
 > I am recreating this app in React by using the same backend
 
-### updates
+### Updates
 
-- Navbar and content for welcome page added and made responsive
+- Navbar added for welcome page
+- Content for welcome page added and made responsive
 - log in modal is made responsive. It opens and closes based on redux state
 - User can log in
 - Authentication completed for routes
@@ -18,7 +19,7 @@
 
 ### Tools used
 
-> Frontend: Tools that will be used in the frontend
+> Frontend
 
 - `React` used as a Frontend Framework
 - `TypeScript`
@@ -43,10 +44,14 @@
 
 - The website will be made responsive
 
-### Functionalities to be added
+### Functionalities added
 
 - Requires a login to access
 - It allows for more than one user. Each user have a username and an individual password
+
+
+### Functionalities to be added
+
 - The app allows the user to create and read notes
 - Created notes are saved and retrieved on next visit
 - It shows which user created a note
