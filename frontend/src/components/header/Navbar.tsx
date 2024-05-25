@@ -5,7 +5,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import logo from "../../assets/logo.png";
 import "./Navbar.css";
 import { useAppDispatch } from "../../app/hooks";
-import { toggleLoginModal } from "../../features/loginModal/login-modal-slice";
+import { toggleLoginModal } from "../../features/login-modal-slice";
 
 // const navItems = [
 //   { name: "My notes", route: "/my-notes", icon: "user" },

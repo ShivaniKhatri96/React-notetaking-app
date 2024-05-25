@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import Logo from "../assets/logo.png";
 import { useAppDispatch } from "../app/hooks";
-import { toggleLoginModal } from "../features/loginModal/login-modal-slice";
+import { toggleLoginModal } from "../features/login-modal-slice";
 const WelcomeContent = () => {
   const dispatch = useAppDispatch();
 

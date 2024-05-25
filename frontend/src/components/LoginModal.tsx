@@ -10,12 +10,13 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { toggleLoginModal } from "../features/loginModal/login-modal-slice";
+import { toggleLoginModal } from "../features/login-modal-slice";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import LargeLogo from "../assets/largeLogo.png";
 import { useState } from "react";
 import { loginInstance } from "../axios/instance";
 import { useNavigate } from "react-router-dom";
+import { login } from "../features/auth-slice";
 
 const LoginModal = () => {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const LoginModal = () => {
   };
 
   const loginFormSubmit = async (e: any) => {
-    // by default login can refresh the page. So, we prevent it
+    // Prevent page refresh on form submission
     e.preventDefault();
     try {
       const response = await loginInstance.post("/login", {
@@ -47,6 +48,7 @@ const LoginModal = () => {
         const data = response.data;
         localStorage.setItem("noteToken", data.token);
         // save the token in a store
+        dispatch(login(data.token))
         setErrorMessage("");
         handleClose();
         navigate("/");
