@@ -1,16 +1,12 @@
 import "./App.css";
 import Welcome from "./pages/Welcome";
 import Navbar from "./components/header/Navbar";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MyNotes from "./pages/MyNotes";
 import Home from "./pages/Home";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 import UnauthenticatedRoute from "./components/routes/UnauthenticatedRoute";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -42,15 +38,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          {/* this one should be for 404 page. Might need to remove protected route for it later!! */}
-          <Route
-            path="*"
-            element={
-              <ProtectedRoute>
-                <Navigate replace to="/" />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>
