@@ -10,10 +10,10 @@
 - log in modal is made responsive. It opens and closes based on redux state
 - User can log in
 - Authentication completed for routes
+- Styling 404 page completed
 
 ### Currently working on
 
-- Styling 404 page
 - Updating navbar based on authentication as well as making it responsive
 
 ### Tools used
