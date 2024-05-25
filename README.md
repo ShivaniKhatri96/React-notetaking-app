@@ -8,10 +8,13 @@
 
 - Navbar and content for welcome page added and made responsive
 - log in modal is made responsive. It opens and closes based on redux state
+- User can log in
+- Authentication completed for routes
 
 ### Currently working on
 
-- Log in portion of the log in modal
+- Styling 404 page
+- Updating navbar based on authentication as well as making it responsive
 
 ### Tools used
 
