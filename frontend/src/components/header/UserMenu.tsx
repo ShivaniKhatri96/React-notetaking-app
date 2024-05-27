@@ -42,8 +42,7 @@ const UserMenu = ({ navItems }: NavProps) => {
           sx={{ display: "flex", gap: "0.2rem" }}
         >
           <AccountCircleRoundedIcon
-            sx={{ color: purple[200] }}
-            fontSize="large"
+            sx={{ color: purple[200], fontSize: "26px" }}
           />
           <Typography fontWeight={500} textTransform={"capitalize"}>
             Shivani
