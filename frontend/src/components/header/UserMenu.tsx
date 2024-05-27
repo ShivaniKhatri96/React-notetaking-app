@@ -21,9 +21,10 @@ interface NavItem {
 
 interface NavProps {
   navItems: NavItem[];
+  handleNav: (route: string) => void;
 }
 
-const UserMenu = ({ navItems }: NavProps) => {
+const UserMenu = ({ navItems, handleNav }: NavProps) => {
   const user = useAppSelector((state) => state.auth.user);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -70,7 +71,10 @@ const UserMenu = ({ navItems }: NavProps) => {
         {navItems.map((item) => (
           <MenuItem
             key={item.name}
-            onClick={handleCloseUserMenu}
+            onClick={() => {
+              handleNav(item.route);
+              handleCloseUserMenu();
+            }}
             sx={{ display: "flex", alignItems: "center", gap: "0.3rem" }}
           >
             {item.icon}

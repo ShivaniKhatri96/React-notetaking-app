@@ -9,9 +9,12 @@ import { toggleLoginModal } from "../../features/login-modal-slice";
 import UserMenu from "./UserMenu";
 import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { logout } from "../../features/auth-slice";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const token = useAppSelector((state) => state.auth.token);
   const loginModalHandler = () => {
     dispatch(toggleLoginModal());
@@ -30,6 +33,17 @@ const Navbar = () => {
     },
   ];
 
+  const handleNav = (route: string) => {
+    // for log out
+    if (route === "/welcome") {
+      localStorage.removeItem("noteToken");
+      localStorage.removeItem("noteUser");
+      dispatch(logout());
+    }
+    //for all routes
+    navigate(route);
+  };
+
   return (
     <>
       <AppBar
@@ -47,7 +61,10 @@ const Navbar = () => {
             alignItems: "center",
           }}
         >
-          <img alt="Notetaking app logo" className="logo" src={logo} />
+          <Link to="/">
+            <img alt="Notetaking app logo" className="logo" src={logo} />
+          </Link>
+
           {token === null ? (
             <Button
               color="inherit"
@@ -57,7 +74,7 @@ const Navbar = () => {
               <LoginIcon /> Login
             </Button>
           ) : (
-            <UserMenu navItems={navItems} />
+            <UserMenu navItems={navItems} handleNav={handleNav} />
           )}
         </Toolbar>
       </AppBar>
