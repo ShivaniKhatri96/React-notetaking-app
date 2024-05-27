@@ -4,20 +4,31 @@ import Button from "@mui/material/Button";
 import LoginIcon from "@mui/icons-material/Login";
 import logo from "../../assets/logo.png";
 import "./Navbar.css";
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { toggleLoginModal } from "../../features/login-modal-slice";
-
-// const navItems = [
-//   { name: "My notes", route: "/my-notes", icon: "user" },
-//   { name: "Log out", route: "/welcome", icon: "right-from-bracket" },
-// ];
+import UserMenu from "./UserMenu";
+import PersonIcon from "@mui/icons-material/Person";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
-
+  const token = useAppSelector((state) => state.auth.token);
   const loginModalHandler = () => {
     dispatch(toggleLoginModal());
   };
+
+  const navItems = [
+    {
+      name: "My notes",
+      route: "/my-notes",
+      icon: <PersonIcon fontSize="small" />,
+    },
+    {
+      name: "Log out",
+      route: "/welcome",
+      icon: <LogoutIcon fontSize="small" />,
+    },
+  ];
 
   return (
     <>
@@ -37,13 +48,17 @@ const Navbar = () => {
           }}
         >
           <img alt="Notetaking app logo" className="logo" src={logo} />
-          <Button
-            color="inherit"
-            sx={{ display: "flex", gap: "0.3rem" }}
-            onClick={loginModalHandler}
-          >
-            <LoginIcon /> Login
-          </Button>
+          {token === null ? (
+            <Button
+              color="inherit"
+              sx={{ display: "flex", gap: "0.3rem" }}
+              onClick={loginModalHandler}
+            >
+              <LoginIcon /> Login
+            </Button>
+          ) : (
+            <UserMenu navItems={navItems} />
+          )}
         </Toolbar>
       </AppBar>
     </>
