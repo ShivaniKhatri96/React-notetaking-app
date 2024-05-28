@@ -14,9 +14,9 @@ import { toggleLoginModal } from "../features/login-modal-slice";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import LargeLogo from "../assets/largeLogo.png";
 import { useState } from "react";
-import { loginInstance } from "../axios/instance";
 import { useNavigate } from "react-router-dom";
 import { login } from "../features/auth-slice";
+import { apiInstance } from "../axios/instance";
 
 const LoginModal = () => {
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ const LoginModal = () => {
     // Prevent page refresh on form submission
     e.preventDefault();
     try {
-      const response = await loginInstance.post("/login", {
+      const response = await apiInstance.post("/login", {
         username,
         password,
       });
@@ -48,7 +48,7 @@ const LoginModal = () => {
         const data = response.data;
         localStorage.setItem("noteToken", data.token);
         // save the token in a store
-        dispatch(login(data.token))
+        dispatch(login(data.token));
         setErrorMessage("");
         handleClose();
         navigate("/");

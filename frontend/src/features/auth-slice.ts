@@ -1,13 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+interface UserObj {
+  username: "string";
+  password: "string";
+  userId: "string";
+  iat: number;
+}
+
 interface authState {
   token: string | null;
-  user: string | null;
+  user: UserObj | null;
 }
+
 const currentUser: any = localStorage?.getItem("noteUser");
+
 const initialState: authState = {
-  token: localStorage?.getItem("noteToken") || null,
-  user: JSON.parse(currentUser) || null,
+  token: localStorage?.getItem("noteToken"),
+  user: JSON.parse(currentUser),
 };
 const authSlice = createSlice({
   name: "auth",

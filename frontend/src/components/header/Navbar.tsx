@@ -9,8 +9,10 @@ import { toggleLoginModal } from "../../features/login-modal-slice";
 import UserMenu from "./UserMenu";
 import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { logout } from "../../features/auth-slice";
+import { logout, setUser } from "../../features/auth-slice";
 import { Link, useNavigate } from "react-router-dom";
+import { apiInstance } from "../../axios/instance";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -43,6 +45,30 @@ const Navbar = () => {
     //for all routes
     navigate(route);
   };
+
+  useEffect(() => {
+    if (token !== null) {
+      const getUserInfo = async () => {
+        try {
+          apiInstance.defaults.headers.common[
+            "Authorization"
+          ] = `Bearer ${token}`;
+          const response = await apiInstance.get("/me");
+          if (response.status === 200) {
+            const data = await response.data;
+            dispatch(setUser(data));
+            // stringifying the object to store in localStorage
+            const userData = JSON.stringify(data);
+            localStorage.setItem("noteUser", userData);
+          }
+        } catch (err) {
+          console.log(err);
+          console.log("Error fetching current user");
+        }
+      };
+      getUserInfo();
+    }
+  }, [token]);
 
   return (
     <>

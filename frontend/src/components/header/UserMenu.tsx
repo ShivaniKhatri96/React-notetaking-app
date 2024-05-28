@@ -33,7 +33,7 @@ const UserMenu = ({ navItems, handleNav }: NavProps) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  console.log("user", user);
+
   return (
     <Box>
       <Tooltip title="Open user settings">
@@ -46,9 +46,8 @@ const UserMenu = ({ navItems, handleNav }: NavProps) => {
             sx={{ color: purple[200], fontSize: "26px" }}
           />
           <Typography fontWeight={500} textTransform={"capitalize"}>
-            Shivani
+            {user?.username}
           </Typography>
-          {/* <Typography>{user?.name}</Typography> */}
           {!!anchorElUser ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </Button>
       </Tooltip>
