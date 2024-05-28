@@ -50,6 +50,7 @@ const Navbar = () => {
     if (token !== null) {
       const getUserInfo = async () => {
         try {
+          // adding token to header of api instance
           apiInstance.defaults.headers.common[
             "Authorization"
           ] = `Bearer ${token}`;
