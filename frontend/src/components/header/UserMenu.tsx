@@ -35,7 +35,7 @@ const UserMenu = ({ navItems, handleNav }: NavProps) => {
   };
 
   return (
-    <Box>
+    <Box sx={{ display: { xs: "none", lg: "block" } }}>
       <Tooltip title="Open user settings">
         <Button
           color="inherit"
@@ -52,7 +52,7 @@ const UserMenu = ({ navItems, handleNav }: NavProps) => {
         </Button>
       </Tooltip>
       <Menu
-        sx={{ mt: "40px" }}
+        sx={{ mt: "40px", display: { xs: "none", lg: "block" } }}
         id="menu-appbar"
         anchorEl={anchorElUser}
         anchorOrigin={{

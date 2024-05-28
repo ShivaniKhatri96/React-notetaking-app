@@ -13,6 +13,7 @@ import { logout, setUser } from "../../features/auth-slice";
 import { Link, useNavigate } from "react-router-dom";
 import { apiInstance } from "../../axios/instance";
 import { useEffect } from "react";
+import HamburgerMenu from "./HamburgerMenu";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -101,7 +102,10 @@ const Navbar = () => {
               <LoginIcon /> Login
             </Button>
           ) : (
-            <UserMenu navItems={navItems} handleNav={handleNav} />
+            <>
+              <UserMenu navItems={navItems} handleNav={handleNav} />
+              <HamburgerMenu />
+            </>
           )}
         </Toolbar>
       </AppBar>
