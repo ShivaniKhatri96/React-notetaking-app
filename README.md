@@ -46,6 +46,7 @@
 
 ### Functionalities added
 
+- Backend added and routes were tested using postman
 - Requires a login to access
 - It allows for more than one user. Each user have a username and an individual password
 
