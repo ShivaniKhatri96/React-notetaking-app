@@ -33,6 +33,7 @@ const NoteCreation = () => {
         alignSelf: "center",
         width: { xs: "100%", lg: "40rem" },
       }}
+      elevation={3}
       ref={paperRef}
     >
       {isCreatingNote && (
