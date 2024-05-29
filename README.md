@@ -12,7 +12,7 @@
 - User can log in
 - Authentication completed for routes
 - Styling 404 page completed
-- Updating navbar based on authentication as well as making it responsive
+- Navbar updated based on authentication. It is fully responsive.
 
 ### Currently working on
 
