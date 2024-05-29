@@ -104,7 +104,7 @@ const Navbar = () => {
           ) : (
             <>
               <UserMenu navItems={navItems} handleNav={handleNav} />
-              <HamburgerMenu />
+              <HamburgerMenu navItems={navItems} handleNav={handleNav} />
             </>
           )}
         </Toolbar>

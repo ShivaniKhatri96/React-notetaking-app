@@ -12,10 +12,11 @@
 - User can log in
 - Authentication completed for routes
 - Styling 404 page completed
+- Updating navbar based on authentication as well as making it responsive
 
 ### Currently working on
 
-- Updating navbar based on authentication as well as making it responsive
+- Creating notes section
 
 ### Tools used
 

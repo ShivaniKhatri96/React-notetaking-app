@@ -6,31 +6,76 @@ import {
   List,
   ListItem,
   ListItemButton,
+  ListItemIcon,
   ListItemText,
   Typography,
 } from "@mui/material";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
+import { purple } from "@mui/material/colors";
+import { useAppSelector } from "../../app/hooks";
 
-const HamburgerMenu = () => {
+interface NavItem {
+  name: string;
+  route: string;
+  icon: any;
+}
+
+interface NavProps {
+  navItems: NavItem[];
+  handleNav: (route: string) => void;
+}
+
+const HamburgerMenu = ({ navItems, handleNav }: NavProps) => {
+  const user = useAppSelector((state) => state.auth.user);
   const drawerWidth = 240;
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setMobileOpen(!mobileOpen);
   };
-//   temporary drawer. it needs to be updated
-  const navItems = ["Home", "About", "Contact"];
+
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+    <Box onClick={handleDrawerToggle}>
+      <Typography
+        variant="h6"
+        sx={{
+          my: 3,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "0.5rem",
+        }}
+      >
+        <AccountCircleRoundedIcon
+          sx={{ color: purple[200] }}
+          fontSize="large"
+        />
+        {user?.username}
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+          <ListItem
+            key={item.name}
+            disablePadding
+            onClick={() => {
+              handleNav(item.route);
+              handleDrawerToggle();
+            }}
+          >
+            <ListItemButton>
+              <ListItemIcon
+                sx={{
+                  color: "inherit",
+                  paddingRight: "0.5rem",
+                  minWidth: "auto",
+                }}
+              >
+                {item.icon}
+              </ListItemIcon>
+              <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
