@@ -22,4 +22,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Bug fixed: When MUI menu is opened, it adds extra padding and removes overflow. The code below fixes the bug */
+  overflow-y: auto !important;
+  padding: 0 !important;
 }

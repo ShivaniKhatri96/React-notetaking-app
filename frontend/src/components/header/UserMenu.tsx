@@ -36,7 +36,7 @@ const UserMenu = ({ navItems, handleNav }: NavProps) => {
 
   return (
     <Box sx={{ display: { xs: "none", lg: "block" } }}>
-      <Tooltip title="Open user settings">
+      <Tooltip title="User settings">
         <Button
           color="inherit"
           onClick={handleOpenUserMenu}

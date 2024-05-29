@@ -1,8 +1,9 @@
-
 const MyNotes = () => {
   return (
-    <div>MyNotes</div>
-  )
-}
+    <main className="page-container">
+      <div>MyNotes</div>
+    </main>
+  );
+};
 
-export default MyNotes
+export default MyNotes;
