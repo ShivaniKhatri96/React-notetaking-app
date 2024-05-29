@@ -4,6 +4,7 @@ const Home = () => {
   return (
     <main className="page-container">
       <NoteCreation />
+      home page
     </main>
   );
 };
