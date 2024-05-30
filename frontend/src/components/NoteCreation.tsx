@@ -112,6 +112,7 @@ const NoteCreation = () => {
             size="small"
             type="submit"
             onClick={handleNoteCreation}
+            disabled={!content.length}
           >
             Create
           </Button>
