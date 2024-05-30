@@ -53,6 +53,7 @@ const extractToken = (authHeader) => {
 //Authentication middleware: to verify jwt token
 const authenticateToken = (req, res, next) => {
   const token = extractToken(req.headers.authorization);
+  //status code 401: unauthorized
   if (!token) return res.status(401).json({ message: "Unauthorized" });
   jwt.verify(token, SECRET_KEY, (err, user) => {
     if (err)
@@ -128,6 +129,7 @@ app.post("/api/notes", authenticateToken, async (req, res) => {
     const userId = req.user.userId;
     const newNote = new Note({ title, content, privacy, user: userId });
     await newNote.save();
+    // status code 201: the request has succeeded and new resource has been created
     res.status(201).json(newNote);
   } catch (error) {
     console.log(error);
