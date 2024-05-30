@@ -4,7 +4,7 @@
 
 > I am recreating this app in React by using the same backend
 
-### Updates
+### Recent updates
 
 - Navbar added for welcome page
 - Content for welcome page added and made responsive
@@ -13,10 +13,11 @@
 - Authentication completed for routes
 - Styling 404 page completed
 - Navbar updated based on authentication. It is fully responsive.
+- Note creation works. It's also responsive
 
 ### Currently working on
 
-- Creating notes section
+- Getting notes from api and styling it
 
 ### Tools used
 
@@ -47,7 +48,7 @@
 
 ### Functionalities added
 
-- Backend added and routes were tested using postman
+- Backend added and routes were tested using `postman`
 - Requires a login to access
 - It allows for more than one user. Each user have a username and an individual password
 
