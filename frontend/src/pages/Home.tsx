@@ -1,13 +1,13 @@
-import { useAppSelector } from "../app/hooks";
+import AllNotes from "../components/AllNotes";
 import NoteCreation from "../components/NoteCreation";
 
 const Home = () => {
-  const notes = useAppSelector((state) => state.notesList.notes);
-  console.log("notes", notes);
   return (
     <main className="page-container">
       <NoteCreation />
       home page
+      {/* add `loading` and `NoDataMessage` */}
+      <AllNotes />
     </main>
   );
 };

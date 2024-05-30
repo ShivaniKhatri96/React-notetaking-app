@@ -27,7 +27,7 @@
 - `Material UI (MUI5)` used as CSS framework
 - `CSS`
 - `React router` used for routing
-- `Redux` used for managing global states
+- `Redux Toolkit` used for managing global states
 - `Axios` using Axios instead of fetch in this (React) version
 - `Material Icons` used for icons in this version instead of font-awesome
 
