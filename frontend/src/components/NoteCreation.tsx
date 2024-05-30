@@ -1,12 +1,15 @@
 import { Box, Button, Paper, TextField } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { apiInstance } from "../axios/instance";
+import { useAppDispatch } from "../app/hooks";
+import { addNotes } from "../features/notes-slice";
 
 const NoteCreation = () => {
   const [isCreatingNote, setIsCreatingNote] = useState<boolean>(false);
   const paperRef: any = useRef(null);
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
+  const dispatch = useAppDispatch();
 
   const handleClickOutside = (e: any) => {
     if (
@@ -39,12 +42,10 @@ const NoteCreation = () => {
       if (response.status === 201) {
         const data = response.data;
         emptyNote();
-        console.log("data", data);
-        // addNotes(data)
+        dispatch(addNotes(data));
       }
     } catch (err) {
       console.log(err);
-      console.log("not working");
     }
   };
 
