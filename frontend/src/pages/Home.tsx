@@ -10,6 +10,7 @@ const Home = () => {
   const isLoading = useAppSelector((state) => state.notesList.isLoading);
   const notes = useAppSelector((state) => state.notesList.notes);
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     dispatch(fetchNotes());
   }, [dispatch]);

@@ -1,8 +1,15 @@
 import { Dispatch, createSlice } from "@reduxjs/toolkit";
 import { apiInstance } from "../axios/instance";
 
+interface NoteItem {
+  content: string;
+  privacy: boolean;
+  title: string;
+  user: string;
+  _id: string;
+}
 interface notesState {
-  notes: any[];
+  notes: NoteItem[];
   isLoading: boolean;
 }
 
