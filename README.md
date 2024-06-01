@@ -6,18 +6,13 @@
 
 ### Recent updates
 
-- Navbar added for welcome page
-- Content for welcome page added and made responsive
-- log in modal is made responsive. It opens and closes based on redux state
-- User can log in
-- Authentication completed for routes
-- Styling 404 page completed
-- Navbar updated based on authentication. It is fully responsive.
 - Note creation works. It's also responsive
+- You can see notes by all users in home page
+- In `My notes` page, notes created by currently logged in user are shown
 
 ### Currently working on
 
-- Getting notes from api and styling it
+- working on Note Card styling 
 
 ### Tools used
 
@@ -51,13 +46,12 @@
 - Backend added and routes were tested using `postman`
 - Requires a login to access
 - It allows for more than one user. Each user have a username and an individual password
-- 404 page to redirect user to another page
-
+- 404 page redirects user to home page
+- The app allows the user to create and read notes
+- Created notes are saved and retrieved on next visit
 
 ### Functionalities to be added
 
-- The app allows the user to create and read notes
-- Created notes are saved and retrieved on next visit
 - It shows which user created a note
 - It allows only note's creator to edit and delete it
 - A note's creator is also allowed to make their note private which means other users can't see it
