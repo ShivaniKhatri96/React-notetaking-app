@@ -21,7 +21,7 @@ const MyNotes = () => {
       {isLoading ? (
         <Loading />
       ) : !filteredNotes.length ? (
-        <NoDataMessage message={"No notes are currently available"} />
+        <NoDataMessage message={"You haven't created notes yet"} />
       ) : (
         <UserNotes filteredNotes={filteredNotes} />
       )}
