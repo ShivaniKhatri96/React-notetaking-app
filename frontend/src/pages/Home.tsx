@@ -4,9 +4,11 @@ import Loading from "../components/Loading";
 import NoDataMessage from "../components/NoDataMessage";
 import NoteCreation from "../components/NoteCreation";
 import { fetchNotes } from "../features/notes-slice";
-import { useAppDispatch } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 
 const Home = () => {
+  const isLoading = useAppSelector((state) => state.notesList.isLoading);
+  const notes = useAppSelector((state) => state.notesList.notes);
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchNotes());
@@ -15,10 +17,13 @@ const Home = () => {
   return (
     <main className="page-container">
       <NoteCreation />
-      {/* add `loading` and `NoDataMessage` */}
-      {/* <Loading /> */}
-      {/* <NoDataMessage message={"No notes are currently available"} /> */}
-      <AllNotes />
+      {isLoading ? (
+        <Loading />
+      ) : !notes.length ? (
+        <NoDataMessage message={"No notes are currently available"} />
+      ) : (
+        <AllNotes />
+      )}
     </main>
   );
 };

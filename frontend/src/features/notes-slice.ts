@@ -3,12 +3,12 @@ import { apiInstance } from "../axios/instance";
 
 interface notesState {
   notes: any[];
-  loading: boolean;
+  isLoading: boolean;
 }
 
 const initialState: notesState = {
   notes: [],
-  loading: false,
+  isLoading: false,
 };
 
 const notesSlice = createSlice({
@@ -16,10 +16,10 @@ const notesSlice = createSlice({
   initialState,
   reducers: {
     fetchNotesStart: (state) => {
-      state.loading = true;
+      state.isLoading = true;
     },
     fetchNotesSuccess: (state, action) => {
-      state.loading = false;
+      state.isLoading = false;
       state.notes = action.payload;
     },
     addNotes: (state, action) => {
@@ -37,7 +37,9 @@ export const fetchNotes = () => async (dispatch: Dispatch) => {
     const response = await apiInstance.get("/notes");
     if (response.status === 200) {
       const data = await response.data;
-      dispatch(fetchNotesSuccess(data));
+      // to show latest created note at the top
+      const reversedData = data.reverse();
+      dispatch(fetchNotesSuccess(reversedData));
     }
   } catch (error) {
     console.log(error);
