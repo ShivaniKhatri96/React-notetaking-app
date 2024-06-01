@@ -5,7 +5,7 @@ import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Person from "../assets/person.png";
+import Person from "../../assets/person.png";
 
 interface NoteObj {
   content: string;
@@ -20,7 +20,7 @@ interface NoteProps {
 const NoteCard = ({ note }: NoteProps) => {
   return (
     <div>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ height: 350 }}>
         <CardHeader
           avatar={
             <Avatar
@@ -29,7 +29,7 @@ const NoteCard = ({ note }: NoteProps) => {
                 boxShadow:
                   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;",
               }}
-              aria-label="recipe"
+              aria-label="user avatar"
               src={Person}
             />
           }

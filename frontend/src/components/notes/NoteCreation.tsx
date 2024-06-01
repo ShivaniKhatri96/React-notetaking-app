@@ -1,8 +1,8 @@
 import { Box, Button, Paper, TextField } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import { apiInstance } from "../axios/instance";
-import { useAppDispatch } from "../app/hooks";
-import { addNotes } from "../features/notes-slice";
+import { apiInstance } from "../../axios/instance";
+import { useAppDispatch } from "../../app/hooks";
+import { addNotes } from "../../features/notes-slice";
 
 const NoteCreation = () => {
   const [isCreatingNote, setIsCreatingNote] = useState<boolean>(false);

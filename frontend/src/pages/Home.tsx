@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import AllNotes from "../components/AllNotes";
 import Loading from "../components/Loading";
 import NoDataMessage from "../components/NoDataMessage";
-import NoteCreation from "../components/NoteCreation";
+import NoteCreation from "../components/notes/NoteCreation";
 import { fetchNotes } from "../features/notes-slice";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+import SharedNotes from "../components/notes/SharedNotes";
 
 const Home = () => {
   const isLoading = useAppSelector((state) => state.notesList.isLoading);
@@ -23,7 +23,7 @@ const Home = () => {
       ) : !notes.length ? (
         <NoDataMessage message={"No notes are currently available"} />
       ) : (
-        <AllNotes />
+        <SharedNotes />
       )}
     </main>
   );

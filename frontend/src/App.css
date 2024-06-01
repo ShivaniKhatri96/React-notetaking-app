@@ -23,3 +23,10 @@
   flex-grow: 1;
   /* overflow: auto; */
 }
+
+/* grid for notesContainer component */
+.all-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
