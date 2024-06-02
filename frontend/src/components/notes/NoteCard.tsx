@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Person from "../../assets/person.png";
+import { Box } from "@mui/material";
 
 interface NoteObj {
   content: string;
@@ -42,10 +43,21 @@ const NoteCard = ({ note }: NoteProps) => {
           subheader="public"
         />
         <CardContent>
-          <Typography variant="body2" sx={{ fontWeight: "700" }}>
+          <Typography variant="body2" sx={{ fontWeight: "700" }} noWrap>
             {note.title}
           </Typography>
-          <Typography variant="body2">{note.content}</Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              display: "-webkit-box",
+              WebkitLineClamp: "11",
+              WebkitBoxOrient: "vertical",
+            }}
+          >
+            {note.content}
+          </Typography>
         </CardContent>
       </Card>
     </div>
