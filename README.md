@@ -61,7 +61,6 @@
 
 - [Adobe express](https://new.express.adobe.com/) used for creating logo
 - [css-box-shadow-examples](https://getcssscan.com/css-box-shadow-examples) used for Box-shadow
-- [font awesome](https://fontawesome.com/) used for icons
 - [Microsoft copilot](https://copilot.microsoft.com/) used to generate animated drawings
 - [animista](https://animista.net/), CSS animations library, used for animations
 
