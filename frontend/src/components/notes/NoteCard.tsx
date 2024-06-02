@@ -6,13 +6,13 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Person from "../../assets/person.png";
-import { Box } from "@mui/material";
 
 interface NoteObj {
   content: string;
   privacy: boolean;
   title: string;
   user: string;
+  noteCreator: string;
   _id: string;
 }
 interface NoteProps {
@@ -38,7 +38,7 @@ const NoteCard = ({ note }: NoteProps) => {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Current user"
+        title={note.noteCreator}
         subheader="public"
         sx={{
           bgcolor: "#f6f4f4",

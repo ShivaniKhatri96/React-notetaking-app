@@ -127,7 +127,14 @@ app.post("/api/notes", authenticateToken, async (req, res) => {
     const { title, content, privacy } = req.body;
     // getting the user ID from 'req'
     const userId = req.user.userId;
-    const newNote = new Note({ title, content, privacy, user: userId });
+    const noteCreator = req.user.username;
+    const newNote = new Note({
+      title,
+      content,
+      privacy,
+      noteCreator,
+      user: userId,
+    });
     await newNote.save();
     // status code 201: the request has succeeded and new resource has been created
     res.status(201).json(newNote);

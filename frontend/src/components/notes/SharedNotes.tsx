@@ -7,7 +7,10 @@ const SharedNotes = () => {
   return (
     <NotesContainer title="Shared notes">
       {notes?.map((note: any) => (
-        <NoteCard key={note._id} note={note} />
+        <NoteCard
+          key={note._id}
+          note={note}
+        />
       ))}
     </NotesContainer>
   );
