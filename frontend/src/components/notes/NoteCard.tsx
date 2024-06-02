@@ -52,6 +52,7 @@ const NoteCard = ({ note }: NoteProps) => {
             {note.noteCreator}
           </Typography>
         }
+        // subheader style needs to be updated
         subheader={
           <Typography
             variant="caption"
