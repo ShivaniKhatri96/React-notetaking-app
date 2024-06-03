@@ -52,20 +52,20 @@ const NoteCard = ({ note }: NoteProps) => {
             {note.noteCreator}
           </Typography>
         }
-        // subheader style needs to be updated
         subheader={
           <Typography
-            variant="caption"
             sx={{
+              color: isAuthUser ? "#ffffff" : "#777777",
               display: "flex",
               alignItems: "center",
+              fontSize: "0.7rem",
             }}
           >
             {note.privacy ? (
-              <LockIcon fontSize="inherit" />
+              <LockIcon sx={{ fontSize: "0.9rem" }} />
             ) : (
-              <PeopleAltIcon fontSize="inherit" />
-            )}
+              <PeopleAltIcon sx={{ fontSize: "0.9rem" }} />
+            )}{" "}
             . {note.privacy ? "Private" : "Public"} Note
           </Typography>
         }
