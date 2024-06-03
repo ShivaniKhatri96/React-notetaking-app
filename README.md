@@ -9,10 +9,12 @@
 - Note creation works. It's also responsive
 - You can see notes by all users in home page
 - In `My notes` page, notes created by currently logged in user are shown
+- working on Note Card styling 
+- Hide private notes if it doesn't belong to authenticated user
 
 ### Currently working on
 
-- working on Note Card styling 
+- add context menu
 
 ### Tools used
 
