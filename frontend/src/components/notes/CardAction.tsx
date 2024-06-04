@@ -3,7 +3,7 @@ import { useState } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { apiInstance } from "../../axios/instance";
 import { useAppDispatch } from "../../app/hooks";
-import { removeNotes } from "../../features/notes-slice";
+import { removeNotes, updateNotePrivacy } from "../../features/notes-slice";
 
 interface actionProps {
   privacy: boolean;
@@ -24,6 +24,20 @@ const CardAction = ({ privacy, noteId }: actionProps) => {
       const response = await apiInstance.delete(`/notes/${noteId}`);
       if (response.status === 200) {
         dispatch(removeNotes(noteId));
+        handleCloseMenu();
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  const updatePrivacy = async (noteId: string) => {
+    try {
+      const response = await apiInstance.put(`/notes/${noteId}`, {
+        privacy: !privacy,
+      });
+      if (response.status === 200) {
+        dispatch(updateNotePrivacy(noteId));
         handleCloseMenu();
       }
     } catch (error) {
@@ -54,7 +68,7 @@ const CardAction = ({ privacy, noteId }: actionProps) => {
       >
         <MenuItem onClick={() => deleteNote(noteId)}>Delete note</MenuItem>
         <MenuItem onClick={handleCloseMenu}>Edit note</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>
+        <MenuItem onClick={() => updatePrivacy(noteId)}>
           {privacy ? "Turn public" : "Turn private"}
         </MenuItem>
       </Menu>

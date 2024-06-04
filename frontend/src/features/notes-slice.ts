@@ -38,10 +38,21 @@ const notesSlice = createSlice({
       );
       state.notes = filtered;
     },
+    updateNotePrivacy: (state, action) => {
+      const updateNote: any = state.notes.find(
+        (note) => note._id === action.payload
+      );
+      updateNote.privacy = !updateNote?.privacy;
+    },
   },
 });
-export const { fetchNotesStart, fetchNotesSuccess, addNotes, removeNotes } =
-  notesSlice.actions;
+export const {
+  fetchNotesStart,
+  fetchNotesSuccess,
+  addNotes,
+  removeNotes,
+  updateNotePrivacy,
+} = notesSlice.actions;
 
 // Async thunk for fetching notes
 export const fetchNotes = () => async (dispatch: Dispatch) => {
