@@ -2,14 +2,13 @@ import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import Avatar from "@mui/material/Avatar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Person from "../../assets/person.png";
 import { useAppSelector } from "../../app/hooks";
 import { purple } from "@mui/material/colors";
 import LockIcon from "@mui/icons-material/Lock";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import CardAction from "./CardAction";
 
 interface NoteObj {
   content: string;
@@ -40,13 +39,7 @@ const NoteCard = ({ note }: NoteProps) => {
             src={Person}
           />
         }
-        action={
-          isAuthUser && (
-            <IconButton aria-label="settings">
-              <MoreVertIcon sx={{ color: "#fff" }} />
-            </IconButton>
-          )
-        }
+        action={isAuthUser && <CardAction privacy={note.privacy} />}
         title={
           <Typography variant="body2" sx={{ fontWeight: "bold" }}>
             {note.noteCreator}
