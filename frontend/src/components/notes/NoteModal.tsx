@@ -13,21 +13,29 @@ import { useState } from "react";
 
 interface noteModalProps {
   noteId: string;
+  title: string;
+  content: string;
   editMode: string;
   setEditMode: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const NoteModal = ({ noteId, editMode, setEditMode }: noteModalProps) => {
+const NoteModal = ({
+  noteId,
+  title,
+  content,
+  editMode,
+  setEditMode,
+}: noteModalProps) => {
   const theme = useTheme();
   //   const dispatch = useAppDispatch();
 
   // fullScreen is used for modal when screen is below 1200px. So, for smaller screens
   const fullScreen = useMediaQuery(theme.breakpoints.down("lg"));
-  const [title, setTitle] = useState<string>("");
+  const [updateTitle, setUpdateTitle] = useState<string>("");
   const isActive = noteId === editMode;
   const handleClose = () => {
     setEditMode("");
-    setTitle("");
+    setUpdateTitle("");
   };
   const handleEdit = () => {
     console.log("edit");
@@ -46,15 +54,15 @@ const NoteModal = ({ noteId, editMode, setEditMode }: noteModalProps) => {
           onSubmit={handleEdit}
         >
           <TextField
-            id="outlined-title-input"
-            label="title"
-            type="title"
-            autoComplete="current-title"
+            id="outlined-updateTitle-input"
+            label="updateTitle"
+            type="updateTitle"
+            autoComplete="current-updateTitle"
             size="small"
             color="success"
             sx={{ outline: "#000" }}
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setUpdateTitle(e.target.value)}
           />
           <Button variant="contained" color="success" type="submit">
             Edit
