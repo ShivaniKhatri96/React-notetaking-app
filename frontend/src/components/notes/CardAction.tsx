@@ -8,8 +8,9 @@ import { removeNotes, updateNotePrivacy } from "../../features/notes-slice";
 interface actionProps {
   privacy: boolean;
   noteId: string;
+  setEditMode: React.Dispatch<React.SetStateAction<string>>;
 }
-const CardAction = ({ privacy, noteId }: actionProps) => {
+const CardAction = ({ privacy, noteId, setEditMode }: actionProps) => {
   const dispatch = useAppDispatch();
   const [anchorElMenu, setAnchorElMenu] = useState<null | HTMLElement>(null);
   const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -30,6 +31,11 @@ const CardAction = ({ privacy, noteId }: actionProps) => {
       console.log("error", error);
     }
   };
+
+  const handleEditMode= (noteId: string) => {
+    setEditMode(noteId);
+    handleCloseMenu();
+  }
 
   const updatePrivacy = async (noteId: string) => {
     try {
@@ -67,7 +73,7 @@ const CardAction = ({ privacy, noteId }: actionProps) => {
         onClose={handleCloseMenu}
       >
         <MenuItem onClick={() => deleteNote(noteId)}>Delete note</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Edit note</MenuItem>
+        <MenuItem onClick={() => handleEditMode(noteId)}>Edit note</MenuItem>
         <MenuItem onClick={() => updatePrivacy(noteId)}>
           {privacy ? "Turn public" : "Turn private"}
         </MenuItem>

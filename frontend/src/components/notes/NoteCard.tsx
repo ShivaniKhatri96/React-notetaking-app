@@ -9,6 +9,8 @@ import { purple } from "@mui/material/colors";
 import LockIcon from "@mui/icons-material/Lock";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import CardAction from "./CardAction";
+import NoteModal from "./NoteModal";
+import { useState } from "react";
 
 interface NoteObj {
   content: string;
@@ -22,10 +24,14 @@ interface NoteProps {
   note: NoteObj;
 }
 const NoteCard = ({ note }: NoteProps) => {
+  const [editMode, setEditMode] = useState<string>('');
   // only loggedInUser should be able to edit, delete or make a note private
   const authUser = useAppSelector((state) => state.auth.user);
   const isAuthUser = authUser?.userId === note.user;
+ 
   return (
+    <>
+   <NoteModal noteId={note._id} editMode={editMode} setEditMode={setEditMode} />
     <Card sx={{ height: 350, color: "#333333" }}>
       <CardHeader
         avatar={
@@ -39,7 +45,7 @@ const NoteCard = ({ note }: NoteProps) => {
             src={Person}
           />
         }
-        action={isAuthUser && <CardAction privacy={note.privacy} noteId={note._id} />}
+        action={isAuthUser && <CardAction privacy={note.privacy} noteId={note._id} setEditMode={setEditMode} />}
         title={
           <Typography variant="body2" sx={{ fontWeight: "bold" }}>
             {note.noteCreator}
@@ -87,6 +93,7 @@ const NoteCard = ({ note }: NoteProps) => {
         </Typography>
       </CardContent>
     </Card>
+    </>
   );
 };
 
