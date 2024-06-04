@@ -32,9 +32,15 @@ const notesSlice = createSlice({
     addNotes: (state, action) => {
       state.notes.unshift(action.payload);
     },
+    removeNotes: (state, action) => {
+      const filtered = state.notes.filter(
+        (note) => note._id !== action.payload
+      );
+      state.notes = filtered;
+    },
   },
 });
-export const { fetchNotesStart, fetchNotesSuccess, addNotes } =
+export const { fetchNotesStart, fetchNotesSuccess, addNotes, removeNotes } =
   notesSlice.actions;
 
 // Async thunk for fetching notes

@@ -39,7 +39,7 @@ const NoteCard = ({ note }: NoteProps) => {
             src={Person}
           />
         }
-        action={isAuthUser && <CardAction privacy={note.privacy} />}
+        action={isAuthUser && <CardAction privacy={note.privacy} noteId={note._id} />}
         title={
           <Typography variant="body2" sx={{ fontWeight: "bold" }}>
             {note.noteCreator}
