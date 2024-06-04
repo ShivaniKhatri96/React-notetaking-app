@@ -11,10 +11,15 @@
 - In `My notes` page, notes created by currently logged in user are shown
 - working on Note Card styling 
 - Hide private notes if it doesn't belong to authenticated user
+- add context menu to edit, delete and turn note private
+- Note can now be deleted and turn private
 
 ### Currently working on
 
-- add context menu
+- working on adding a modal for edit mode
+
+### Next
+- I also want people to be able to open the note when clicked on the cardContent. Edit Modal will be reutilized here. Note should be read only in the modal if it doesn't belong to the authenticated user.
 
 ### Tools used
 
@@ -51,12 +56,13 @@
 - 404 page redirects user to home page
 - The app allows the user to create and read notes
 - Created notes are saved and retrieved on next visit
+- It shows which user created a note
+It allows only note's creator to delete it
+- A note's creator is also allowed to make their note private which means other users can't see it
 
 ### Functionalities to be added
 
-- It shows which user created a note
-- It allows only note's creator to edit and delete it
-- A note's creator is also allowed to make their note private which means other users can't see it
+- It allows only note's creator to edit it
 - Be accessible from a public url by deploying
 
 ### Links used
