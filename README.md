@@ -16,7 +16,7 @@
 
 ### Currently working on
 
-- working on adding a modal for edit mode
+- working on adding a modal for edit mode and style it
 
 ### Next
 - I also want people to be able to open the note when clicked on the cardContent. Edit Modal will be reutilized here. Note should be read only in the modal if it doesn't belong to the authenticated user.
