@@ -38,6 +38,14 @@ const notesSlice = createSlice({
       );
       state.notes = filtered;
     },
+    updateNotes: (state, action) => {
+      const { noteId, updateTitle, updateContent } = action.payload;
+      const updateNote: any = state.notes.find((note) => note._id === noteId);
+      if (updateNote) {
+        updateNote.title = updateTitle;
+        updateNote.content = updateContent;
+      }
+    },
     updateNotePrivacy: (state, action) => {
       const updateNote: any = state.notes.find(
         (note) => note._id === action.payload
@@ -51,6 +59,7 @@ export const {
   fetchNotesSuccess,
   addNotes,
   removeNotes,
+  updateNotes,
   updateNotePrivacy,
 } = notesSlice.actions;
 

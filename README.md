@@ -9,17 +9,14 @@
 - Note creation works. It's also responsive
 - You can see notes by all users in home page
 - In `My notes` page, notes created by currently logged in user are shown
-- working on Note Card styling 
+- working on Note Card styling
 - Hide private notes if it doesn't belong to authenticated user
 - add context menu to edit, delete and turn note private
-- Note can now be deleted and turn private
 - Modal added for edit mode and it's styled and made responsive
+- Note can now be edited, deleted and turned private
 
 ### Currently working on
 
-- Editing functionality 
-
-### Next
 - I also want people to be able to open the note when clicked on the cardContent. Edit Modal will be reutilized here. Note should be read only in the modal if it doesn't belong to the authenticated user.
 
 ### Tools used
@@ -57,13 +54,13 @@
 - 404 page redirects user to home page
 - The app allows the user to create and read notes
 - Created notes are saved and retrieved on next visit
-- It shows which user created a note
-It allows only note's creator to delete it
+- It shows which user created a note. It allows only note's creator to edit and delete it
 - A note's creator is also allowed to make their note private which means other users can't see it
 
 ### Functionalities to be added
 
-- It allows only note's creator to edit it
+- Open note in a modal when clicked on card content
+- Test using Cypress
 - Be accessible from a public url by deploying
 
 ### Links used

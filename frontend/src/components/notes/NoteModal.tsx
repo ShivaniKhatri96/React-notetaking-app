@@ -14,6 +14,7 @@ import SaveIcon from "@mui/icons-material/Save";
 import { useEffect, useState } from "react";
 import { apiInstance } from "../../axios/instance";
 import { useAppDispatch } from "../../app/hooks";
+import { updateNotes } from "../../features/notes-slice";
 // import { useAppDispatch } from "../../app/hooks";
 
 interface noteModalProps {
@@ -56,9 +57,8 @@ const NoteModal = ({
         content: updateContent,
       });
       if (response.status === 200) {
-        //updateNotes in redux-slice
-        //  dispatch();
-        handleClose();
+        dispatch(updateNotes({ noteId, updateTitle, updateContent }));
+        setEditMode("");
       }
     } catch (err) {
       console.log(err);
