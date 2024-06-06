@@ -13,10 +13,11 @@
 - Hide private notes if it doesn't belong to authenticated user
 - add context menu to edit, delete and turn note private
 - Note can now be deleted and turn private
+- Modal added for edit mode and it's styled and made responsive
 
 ### Currently working on
 
-- working on adding a modal for edit mode and style it
+- Editing functionality 
 
 ### Next
 - I also want people to be able to open the note when clicked on the cardContent. Edit Modal will be reutilized here. Note should be read only in the modal if it doesn't belong to the authenticated user.
@@ -46,7 +47,7 @@
 
 ### Responsive Design
 
-- The website will be made responsive
+- The website is made responsive. Pictures will be added once I complete the project
 
 ### Functionalities added
 
