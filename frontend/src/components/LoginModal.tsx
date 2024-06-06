@@ -91,7 +91,6 @@ const LoginModal = () => {
             autoComplete="current-username"
             size="small"
             color="success"
-            sx={{ outline: "#000" }}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />

@@ -55,7 +55,6 @@ const NoteModal = ({
         >
           <TextField
             id="outlined-updateTitle-input"
-            label="updateTitle"
             type="updateTitle"
             autoComplete="current-updateTitle"
             size="small"
