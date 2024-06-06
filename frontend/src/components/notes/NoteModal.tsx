@@ -106,6 +106,7 @@ const NoteModal = ({
           size="small"
           color="success"
           type="submit"
+          disabled={!updateContent.length}
           onClick={() => handleEdit(noteId)}
         >
           <SaveIcon sx={{ fontSize: "1rem", marginRight: "0.2rem" }} />
