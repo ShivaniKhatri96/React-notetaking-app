@@ -12,6 +12,8 @@ import {
 import SaveIcon from "@mui/icons-material/Save";
 
 import { useEffect, useState } from "react";
+import { apiInstance } from "../../axios/instance";
+import { useAppDispatch } from "../../app/hooks";
 // import { useAppDispatch } from "../../app/hooks";
 
 interface noteModalProps {
@@ -30,7 +32,7 @@ const NoteModal = ({
   setEditMode,
 }: noteModalProps) => {
   const theme = useTheme();
-  //   const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   // fullScreen is used for modal when screen is below 1200px. So, for smaller screens
   const fullScreen = useMediaQuery(theme.breakpoints.down("lg"));
@@ -47,8 +49,20 @@ const NoteModal = ({
     resetFields();
   };
 
-  const handleEdit = () => {
-    console.log("edit");
+  const handleEdit = async (noteId: string) => {
+    try {
+      const response = await apiInstance.put(`/notes/${noteId}`, {
+        title: updateTitle,
+        content: updateContent,
+      });
+      if (response.status === 200) {
+        //updateNotes in redux-slice
+        //  dispatch();
+        handleClose();
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
@@ -92,7 +106,7 @@ const NoteModal = ({
           size="small"
           color="success"
           type="submit"
-          onClick={handleEdit}
+          onClick={() => handleEdit(noteId)}
         >
           <SaveIcon sx={{ fontSize: "1rem", marginRight: "0.2rem" }} />
           Save
