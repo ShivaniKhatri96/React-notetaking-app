@@ -37,17 +37,22 @@ const NoteModal = ({
   const [updateTitle, setUpdateTitle] = useState<string>("");
   const [updateContent, setUpdateContent] = useState<string>("");
   const isActive = noteId === editMode;
+
+  const resetFields = () => {
+    setUpdateTitle(title);
+    setUpdateContent(content);
+  };
   const handleClose = () => {
     setEditMode("");
-    setUpdateTitle("");
+    resetFields();
   };
+
   const handleEdit = () => {
     console.log("edit");
   };
 
   useEffect(() => {
-    setUpdateTitle(title);
-    setUpdateContent(content);
+    resetFields();
   }, []);
 
   return (
