@@ -9,6 +9,8 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import SaveIcon from "@mui/icons-material/Save";
+
 import { useEffect, useState } from "react";
 // import { useAppDispatch } from "../../app/hooks";
 
@@ -80,10 +82,22 @@ const NoteModal = ({
         />
       </DialogContent>
       <DialogActions>
-        <Button variant="contained" color="success" type="submit">
-          Edit
+        <Button
+          variant="contained"
+          size="small"
+          color="success"
+          type="submit"
+          onClick={handleEdit}
+        >
+          <SaveIcon sx={{ fontSize: "1rem", marginRight: "0.2rem" }} />
+          Save
         </Button>
-        <Button color="inherit" onClick={handleClose}>
+        <Button
+          variant="outlined"
+          size="small"
+          color="inherit"
+          onClick={handleClose}
+        >
           Cancel
         </Button>
       </DialogActions>
