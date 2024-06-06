@@ -48,23 +48,22 @@ const NoteModal = ({
     setUpdateContent(content);
   }, []);
 
-  const StyledTextField = styled(TextField)({
-    "& fieldset": { border: "none" },
-    backgroundColor: "rgba(0, 0, 0, 0.06)",
-  });
-
   return (
     <Dialog fullScreen={fullScreen} open={isActive} onClose={handleClose}>
       <DialogContent>
-        <StyledTextField
+        <TextField
           id="outlined-title"
           placeholder="Title"
           fullWidth
           size="small"
+          sx={{
+            "& fieldset": { border: "none" },
+            backgroundColor: "rgba(0, 0, 0, 0.06)",
+          }}
           value={updateTitle}
           onChange={(e) => setUpdateTitle(e.target.value)}
         />
-        <StyledTextField
+        <TextField
           id="outlined-content"
           placeholder="Take a note..."
           multiline
@@ -72,6 +71,8 @@ const NoteModal = ({
           minRows={15}
           size="small"
           sx={{
+            "& fieldset": { border: "none" },
+            backgroundColor: "rgba(0, 0, 0, 0.06)",
             marginTop: "1rem",
           }}
           value={updateContent}
