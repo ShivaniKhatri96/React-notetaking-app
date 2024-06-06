@@ -5,10 +5,11 @@ import {
   DialogActions,
   DialogContent,
   TextField,
+  styled,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { useAppDispatch } from "../../app/hooks";
 
 interface noteModalProps {
@@ -32,6 +33,7 @@ const NoteModal = ({
   // fullScreen is used for modal when screen is below 1200px. So, for smaller screens
   const fullScreen = useMediaQuery(theme.breakpoints.down("lg"));
   const [updateTitle, setUpdateTitle] = useState<string>("");
+  const [updateContent, setUpdateContent] = useState<string>("");
   const isActive = noteId === editMode;
   const handleClose = () => {
     setEditMode("");
@@ -40,41 +42,50 @@ const NoteModal = ({
   const handleEdit = () => {
     console.log("edit");
   };
+
+  useEffect(() => {
+    setUpdateTitle(title);
+    setUpdateContent(content);
+  }, []);
+
+  const StyledTextField = styled(TextField)({
+    "& fieldset": { border: "none" },
+    backgroundColor: "rgba(0, 0, 0, 0.06)",
+  });
+
   return (
     <Dialog fullScreen={fullScreen} open={isActive} onClose={handleClose}>
       <DialogContent>
-        <Box
-          component="form"
+        <StyledTextField
+          id="outlined-title"
+          placeholder="Title"
+          fullWidth
+          size="small"
+          value={updateTitle}
+          onChange={(e) => setUpdateTitle(e.target.value)}
+        />
+        <StyledTextField
+          id="outlined-content"
+          placeholder="Take a note..."
+          multiline
+          fullWidth
+          minRows={15}
+          size="small"
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem",
-            marginTop: "0.5rem",
+            marginTop: "1rem",
           }}
-          onSubmit={handleEdit}
-        >
-          <TextField
-            id="outlined-updateTitle-input"
-            type="updateTitle"
-            autoComplete="current-updateTitle"
-            size="small"
-            color="success"
-            sx={{ outline: "#000" }}
-            value={title}
-            onChange={(e) => setUpdateTitle(e.target.value)}
-          />
-          <Button variant="contained" color="success" type="submit">
-            Edit
-          </Button>
-        </Box>
+          value={updateContent}
+          onChange={(e) => setUpdateContent(e.target.value)}
+        />
       </DialogContent>
-      {fullScreen && (
-        <DialogActions>
-          <Button color="inherit" onClick={handleClose}>
-            Cancel
-          </Button>
-        </DialogActions>
-      )}
+      <DialogActions>
+        <Button variant="contained" color="success" type="submit">
+          Edit
+        </Button>
+        <Button color="inherit" onClick={handleClose}>
+          Cancel
+        </Button>
+      </DialogActions>
     </Dialog>
   );
 };
