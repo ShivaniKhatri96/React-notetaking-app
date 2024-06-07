@@ -23,6 +23,7 @@ interface noteModalProps {
   content: string;
   editMode: string;
   setEditMode: React.Dispatch<React.SetStateAction<string>>;
+  isAuthUser: boolean;
 }
 
 const NoteModal = ({
@@ -31,6 +32,7 @@ const NoteModal = ({
   content,
   editMode,
   setEditMode,
+  isAuthUser,
 }: noteModalProps) => {
   const theme = useTheme();
   const dispatch = useAppDispatch();
@@ -77,6 +79,7 @@ const NoteModal = ({
           placeholder="Title"
           fullWidth
           size="small"
+          inputProps={{ readOnly: isAuthUser ? false : true }}
           sx={{
             "& fieldset": { border: "none" },
             backgroundColor: "rgba(0, 0, 0, 0.06)",
@@ -91,6 +94,7 @@ const NoteModal = ({
           fullWidth
           minRows={15}
           size="small"
+          inputProps={{ readOnly: isAuthUser ? false : true }}
           sx={{
             "& fieldset": { border: "none" },
             backgroundColor: "rgba(0, 0, 0, 0.06)",
@@ -101,24 +105,26 @@ const NoteModal = ({
         />
       </DialogContent>
       <DialogActions>
-        <Button
-          variant="contained"
-          size="small"
-          color="success"
-          type="submit"
-          disabled={!updateContent.length}
-          onClick={() => handleEdit(noteId)}
-        >
-          <SaveIcon sx={{ fontSize: "1rem", marginRight: "0.2rem" }} />
-          Save
-        </Button>
+        {isAuthUser && (
+          <Button
+            variant="contained"
+            size="small"
+            color="success"
+            type="submit"
+            disabled={!updateContent.length}
+            onClick={() => handleEdit(noteId)}
+          >
+            <SaveIcon sx={{ fontSize: "1rem", marginRight: "0.2rem" }} />
+            Save
+          </Button>
+        )}
         <Button
           variant="outlined"
           size="small"
-          color="inherit"
+          color={isAuthUser ? "inherit" : "success"}
           onClick={handleClose}
         >
-          Cancel
+          {isAuthUser ? "Cancel" : "Go Back"}
         </Button>
       </DialogActions>
     </Dialog>

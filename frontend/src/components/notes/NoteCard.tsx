@@ -37,6 +37,7 @@ const NoteCard = ({ note }: NoteProps) => {
         content={note.content}
         editMode={editMode}
         setEditMode={setEditMode}
+        isAuthUser = {isAuthUser}
       />
       <Card sx={{ height: 350, color: "#333333" }}>
         <CardHeader
@@ -89,7 +90,10 @@ const NoteCard = ({ note }: NoteProps) => {
               "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         />
-        <CardContent>
+        <CardContent
+          onClick={() => setEditMode(note._id)}
+          sx={{ minHeight: "100%", cursor: "pointer" }}
+        >
           <Typography variant="body2" sx={{ fontWeight: "700" }} noWrap>
             {note.title}
           </Typography>
