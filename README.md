@@ -14,7 +14,7 @@
 - `CSS`
 - `React router` used for routing
 - `Redux Toolkit` used for managing global states
-- `Axios` using Axios instead of fetch in this (React) version
+- `Axios` used instead of fetch in this (React) version
 - `Material Icons` used for icons in this version instead of font-awesome
 
 > Backend
@@ -39,8 +39,8 @@
 - 404 page redirects user to home page
 - The app allows the user to create and read notes
 - Created notes are saved and retrieved on next visit
-- It shows which user created a note. Note can be opened in a modal when clicked on card content.
-- It allows only note's creator to edit and delete it.
+- It shows which user created a note. Note can be opened in a modal when clicked on (note) card content
+- It allows only note's creator to edit and delete it
 - A note's creator is also allowed to make their note private which means other users can't see it
 
 ### Functionalities to be added
