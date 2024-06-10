@@ -29,8 +29,7 @@ I recreated this app in `React` by using the same backend as in `Vue` version. V
 
 ### Responsive Design
 
-- The website is made responsive.
- > Here, you can see examples for `small` and `large` screens
+- The website is made responsive. Here, you can see examples for `small` and `large` screens
  >
  > ![welcome small screen](./frontend/public/readme/sm_welcome.png) ![Home small screen](./frontend/public/readme/sm_home.png)
  ![404 page](./frontend/public/readme/404.png)
@@ -54,7 +53,7 @@ I recreated this app in `React` by using the same backend as in `Vue` version. V
 
 - Test using Cypress
 
-#### Log in via these Accounts
+### Log in via these Accounts
 
 You can log in using 3 different accounts to test the project:
 | Username | Password |
