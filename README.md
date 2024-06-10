@@ -31,6 +31,10 @@
 
 - The website is made responsive.
  > Here, you can see examples for `small` and `large` screens
+ >
+ > ![welcome small screen](./frontend/public/readme/sm_welcome.png) ![Home small screen](./frontend/public/readme/sm_home.png)
+ ![404 page](./frontend/public/readme/404.png)
+ ![welcome large screen](./frontend/public/readme/welcome.png) ![Home large screen](./frontend/public/readme/home.png)
 
 ### Functionalities added
 
