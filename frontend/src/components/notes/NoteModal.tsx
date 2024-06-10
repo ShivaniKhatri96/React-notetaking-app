@@ -13,7 +13,6 @@ import { useEffect, useState } from "react";
 import { apiInstance } from "../../axios/instance";
 import { useAppDispatch } from "../../app/hooks";
 import { updateNotes } from "../../features/notes-slice";
-// import { useAppDispatch } from "../../app/hooks";
 
 interface noteModalProps {
   noteId: string;

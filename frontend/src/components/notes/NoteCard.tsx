@@ -94,7 +94,7 @@ const NoteCard = ({ note }: NoteProps) => {
           onClick={() => setEditMode(note._id)}
           sx={{ minHeight: "100%", cursor: "pointer" }}
         >
-          <Typography variant="body2" sx={{ fontWeight: "700" }} noWrap>
+          <Typography variant="body2" sx={{ fontWeight: "700", textTransform: "capitalize" }} noWrap>
             {note.title}
           </Typography>
           <Typography

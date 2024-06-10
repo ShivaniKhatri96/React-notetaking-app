@@ -2,7 +2,7 @@
 
 > Ready to embark on a note-taking journey? Create `noteworthy notes` with `Noteworthy`. Note is shared among all the users. However, only the note's creator can edit and delete it.
 
-> I am recreating this app in React by using the same backend
+> I am recreating this app in `React` by using the same backend as in `Vue` version
 
 ### Tools used
 
@@ -29,7 +29,8 @@
 
 ### Responsive Design
 
-- The website is made responsive. Pictures will be added once I complete the project
+- The website is made responsive.
+ > Here, you can see examples for `small` and `large` screens
 
 ### Functionalities added
 
@@ -42,32 +43,12 @@
 - It shows which user created a note. Note can be opened in a modal when clicked on (note) card content
 - It allows only note's creator to edit and delete it
 - A note's creator is also allowed to make their note private which means other users can't see it
-- Be accessible from a public url by deploying. Backend deployed using [Render](https://render.com/) and Frontend deployed using [Vercel](https://vercel.com/)
+- Home page shows notes by all users and My notes pages shows notes created by the authenticated user
+- It's accessible from a public url. Backend is deployed using [Render](https://render.com/) and Frontend is deployed using [Vercel](https://vercel.com/)
 
 ### Functionalities to be added
 
 - Test using Cypress
-
-### Links used
-
-- [Adobe express](https://new.express.adobe.com/) used for creating logo
-- [css-box-shadow-examples](https://getcssscan.com/css-box-shadow-examples) used for Box-shadow
-- [Microsoft copilot](https://copilot.microsoft.com/) used to generate animated drawings as well as using AI while coding
-- [animista](https://animista.net/), CSS animations library, used for animations
-
-### Opening/ Running the file
-
-#### Backend
-
-> `cd backend`
-
-> `npm run dev` or `npm run start`
-
-#### Frontend
-
-> `cd frontend`
-
-> `npm run dev`
 
 #### Log in via these Accounts
 
@@ -78,6 +59,31 @@ You can log in using 3 different accounts to test the project:
 | `Ron` | `Ron1` |
 | `Harry` | `Harry1` |
 
-### Final Notes
+### Opening/ Running the file locally
 
+#### Backend
+
+> `cd backend`
+
+> `npm install`
+
+> `npm run dev` or `npm run start`
+
+#### Frontend
+
+> `cd frontend`
+
+> `npm install`
+
+> `npm run dev`
+
+### Links used
+
+- [Adobe express](https://new.express.adobe.com/) used for creating logo
+- [css-box-shadow-examples](https://getcssscan.com/css-box-shadow-examples) used for Box-shadow
+- [Microsoft copilot](https://copilot.microsoft.com/) used to generate animated drawings as well as using AI while coding
+- [animista](https://animista.net/), CSS animations library, used for animations
+
+### Final Notes
+> There are some notes already created in Hermione's and Ron's account but I have intentionally left Harry's account empty to show the difference. 
 > Even though the final design is my own, I took a lot of inspiration from [Google keep](https://keep.google.com/), [Dribbble](https://dribbble.com/) and [Facebook Posts](https://www.facebook.com/).
