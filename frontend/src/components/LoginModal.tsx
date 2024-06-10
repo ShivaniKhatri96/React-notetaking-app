@@ -34,6 +34,7 @@ const LoginModal = () => {
     dispatch(toggleLoginModal());
     setUsername("");
     setPassword("");
+    setErrorMessage("");
   };
 
   const loginFormSubmit = async (e: any) => {
@@ -49,7 +50,6 @@ const LoginModal = () => {
         localStorage.setItem("noteToken", data.token);
         // save the token in a store
         dispatch(login(data.token));
-        setErrorMessage("");
         handleClose();
         navigate("/");
         console.log("Successfully logged in");
