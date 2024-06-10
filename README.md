@@ -4,7 +4,7 @@
 
 > I am recreating this app in `React` by using the same backend as in `Vue` version
 > Visit the website using this link: [Noteworthy: A Notetaking-app](https://react-notetaking-app-reau.vercel.app/)
-*How to log in? Simple! Use the account and password provided below*
+> *How to log in? Simple! Use the account and password provided below*
 
 ### Tools used
 
