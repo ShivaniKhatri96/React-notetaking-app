@@ -42,17 +42,17 @@
 - It shows which user created a note. Note can be opened in a modal when clicked on (note) card content
 - It allows only note's creator to edit and delete it
 - A note's creator is also allowed to make their note private which means other users can't see it
+- Be accessible from a public url by deploying. Backend deployed using [Render](https://render.com/) and Frontend deployed using [Vercel](https://vercel.com/)
 
 ### Functionalities to be added
 
 - Test using Cypress
-- Be accessible from a public url by deploying
 
 ### Links used
 
 - [Adobe express](https://new.express.adobe.com/) used for creating logo
 - [css-box-shadow-examples](https://getcssscan.com/css-box-shadow-examples) used for Box-shadow
-- [Microsoft copilot](https://copilot.microsoft.com/) used to generate animated drawings
+- [Microsoft copilot](https://copilot.microsoft.com/) used to generate animated drawings as well as using AI while coding
 - [animista](https://animista.net/), CSS animations library, used for animations
 
 ### Opening/ Running the file
