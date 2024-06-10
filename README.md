@@ -1,10 +1,8 @@
 # Noteworthy: A Notetaking-app created with React
 
-> Ready to embark on a note-taking journey? Create `noteworthy notes` with `Noteworthy`. Note is shared among all the users. However, only the note's creator can edit and delete it.
-
-- I recreated this app in `React` by using the same backend as in `Vue` version.
-- Visit the (React) web app using this link: [Noteworthy: A Notetaking-app](https://react-notetaking-app-reau.vercel.app/)
-- *How to log in? Simple! Use the account and password provided below* ;)
+Ready to embark on a note-taking journey? Create `noteworthy notes` with `Noteworthy`. Note is shared among all the users. However, only the note's creator can edit and delete it.
+I recreated this app in `React` by using the same backend as in `Vue` version. Visit the (React) web app using this link: [Noteworthy: A Notetaking-app](https://react-notetaking-app-reau.vercel.app/)
+> *How to log in? Simple! Use the account and password provided below* ;)
 
 ### Tools used
 
