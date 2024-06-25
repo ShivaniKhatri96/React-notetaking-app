@@ -5,5 +5,8 @@ describe('template spec', () => {
         cy.get('input[type="username"]').type("Ron")
         cy.get('input[type="password"]').type("Ron1")
         cy.get('button[type="submit"]').click()
+        cy.get('#outlined-content').type("Hey! This is cypress testing note creation")
+        cy.get('#outlined-title').type("Cypress test")
+        cy.contains('button','Create').click()
     })
 })
