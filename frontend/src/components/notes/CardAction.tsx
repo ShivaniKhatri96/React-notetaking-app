@@ -53,7 +53,7 @@ const CardAction = ({ privacy, noteId, setEditMode }: actionProps) => {
 
   return (
     <>
-      <IconButton aria-label="settings" onClick={handleOpenMenu}>
+      <IconButton aria-label="settings" id="ellipsis-icon" onClick={handleOpenMenu}>
         <MoreVertIcon sx={{ color: "#fff" }} />
       </IconButton>
       <Menu
